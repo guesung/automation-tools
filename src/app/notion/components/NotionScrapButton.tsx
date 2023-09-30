@@ -1,5 +1,6 @@
 "use client";
 import axios from "axios";
+import { Button } from "@/components/ui/button";
 
 export default function NotionScrapButton() {
   const handleApiTestClick = async () => {
@@ -11,7 +12,7 @@ export default function NotionScrapButton() {
 
   return (
     <div>
-      <button onClick={handleApiTestClick}>노션 긁어오기</button>
+      <Button onClick={handleApiTestClick}>노션 긁어오기</Button>
     </div>
   );
 }
