@@ -4,9 +4,9 @@ import { NextResponse } from "next/server";
 
 export async function GET() {
   const getNotionData = async () => {
-    const notion = new Client({ auth: EnvConstants.NOTION_TOKEN });
+    const notion = new Client({ auth: process.env.NEXT_PUBLIC_NOTION_TOKEN });
     const notionData = await notion.databases.query({
-      database_id: EnvConstants.NOTION_DATABASE_ID || "",
+      database_id: process.env.NEXT_PUBLIC_NOTION_DATABASE_ID || "",
     });
     return notionData.results;
   };
