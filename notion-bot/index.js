@@ -1,5 +1,4 @@
 const dotenv = require('dotenv')
-const express = require("express");
 const Client = require("@notionhq/client").Client;
 dotenv.config()
 
@@ -13,18 +12,4 @@ const getNotionApi = async () => {
   return notionData.results;
 };
 
-const app = express();
-app.set("port", 8001);
-
-app.use("/", async (req, res) => {
-  try {
-    const notionData = await getNotionApi();
-    res.send(notionData);
-  } catch (err) {
-    console.error(err);
-  }
-});
-
-app.listen(app.get("port"), () => {
-  console.log("Notion API 서버 실행");
-});
+module.exports = getNotionApi
