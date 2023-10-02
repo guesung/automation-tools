@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "scheduler": "node ./scheduler/app.ts"
+    "scheduler": "node ./scheduler/app"
   },
   "dependencies": {
     "@notionhq/client": "^2.2.13",
